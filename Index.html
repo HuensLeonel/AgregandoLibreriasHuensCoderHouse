@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonel Levi Huens CoderHouse Simulador Interactivo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <style>
         .esconder{
             display: none;
@@ -16,33 +19,46 @@
     </style>
 </head>
 <body>
-    <div class="mostrar" id="login">
-        <h1>Login</h1>
-        <label for="">Usuario</label>
-        <input type="text" id="inpUsu" placeholder="INGRESAR 'admin'">
-        <br>
-        <label for="">Contraseña</label>
-        <input type="number" id="inpCont" placeholder="INGRESAR '1234'">
-    
-        <input type="button" value="Ingresar" id="btnIngresar">
+    <div class=" container mostrar" id="login">
+        <div class="row animate__animated animate__bounceInRight">
+            <div class="col-lg-4 col-md-4"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h1 class="text-center ">Login</h1>
+                <label for="" class="">Usuario</label>
+                <input type="text" id="inpUsu" placeholder="INGRESAR 'admin'">
+                <br>
+                <label for="">Contraseña</label>
+                <input type="number" id="inpCont" placeholder="INGRESAR '1234'">
+            
+                <input type="button" value="Ingresar" id="btnIngresar" class="">
+            </div>
+            <div class="col-lg-4 col-md-4"></div>
+        </div>
+        
     </div>
 
-    <div class="esconder"  id="sistema">
-        <h1>Sistema de gestion de alumnos</h1>
-        <label for="">Nombre Completo</label>
-        <input type="text" id="inpNombre">
-        <br>
-        <label for="">Nota 1</label>
-        <input type="number" id="inpNota1">
-        <br>
-        <label for="">Nota 2</label>
-        <input type="number" id="inpNota2">
-        <br>
-        <label for="">Nota 3</label>
-        <input type="number" id="inpNota3">
-    
-        <input type="button" value="Registrar" id="btnRegistrar">
-    
+    <div class="esconder container-fluid"  id="sistema">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 class="text-center animatre-animated animate__heartBeat">Sistema de gestion de alumnos</h1>
+                <label for="">Nombre Completo</label>
+                <input type="text" id="inpNombre">
+                <br>
+                <label for="">Nota 1</label>
+                <input type="number" id="inpNota1">
+                <br>
+                <label for="">Nota 2</label>
+                <input type="number" id="inpNota2">
+                <br>
+                <label for="">Nota 3</label>
+                <input type="number" id="inpNota3">
+                <br>
+                <input type="button" value="Registrar" id="btnRegistrar">
+            </div>
+            <div class="col-md-4"></div>
+        </div>    
+        <!-- Obtener todos los alumnos -->
         <div class="">
             <h3>Listado de alumnos cargados en el sistema</h3>
             <input type="button" value="Obtener todos los alumnos cargados" onclick="cargarDatos()" id="btnObtener">
@@ -51,7 +67,9 @@
             </ul>
         </div>
     </div>
-
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="script.js"></script>
 </body>
 </html>

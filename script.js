@@ -29,6 +29,13 @@ window.addEventListener("load", () => {
 		divLogin.classList.add("esconder");
 		divSist.classList.remove("esconder");
 		divSist.classList.add("mostrar");
+		Toastify({
+			text: "Inicio de sesion correcto",
+			className: "info",
+			style: {
+			  background: "linear-gradient(to right, #00b09b, #96c93d)",
+			}
+		  }).showToast();
 	}
 });
 
@@ -56,7 +63,7 @@ document.getElementById("btnIngresar").addEventListener("click", () => {
 
 		sessionStorage.setItem("sesion", "1");
 	} else {
-		alert("Usuario o Contraseña incorrecta");
+		swal("Usuario y contraseña incorrecta", "Verifique de nuevo", "error");
 	}
 });
 
@@ -88,6 +95,7 @@ document.getElementById("btnRegistrar").addEventListener("click", () => {
 			myList.innerHTML += `<li>${obj[i].nombre} - ${obj[i].promedio}<li>`;
 		}
 	} else {
-		alert("Ingresar notas correctas");
+		swal("Ingrese notas validas", "Verifique de nuevo", "error");
+
 	}
 });
