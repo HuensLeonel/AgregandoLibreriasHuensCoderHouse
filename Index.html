@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonel Levi Huens CoderHouse Simulador Interactivo</title>
+    <style>
+        .esconder{
+            display: none;
+        }
+
+        .mostrar{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="mostrar" id="login">
+        <h1>Login</h1>
+        <label for="">Usuario</label>
+        <input type="text" id="inpUsu" placeholder="INGRESAR 'admin'">
+        <br>
+        <label for="">Contraseña</label>
+        <input type="number" id="inpCont" placeholder="INGRESAR '1234'">
+    
+        <input type="button" value="Ingresar" id="btnIngresar">
+    </div>
+
+    <div class="esconder"  id="sistema">
+        <h1>Sistema de gestion de alumnos</h1>
+        <label for="">Nombre Completo</label>
+        <input type="text" id="inpNombre">
+        <br>
+        <label for="">Nota 1</label>
+        <input type="number" id="inpNota1">
+        <br>
+        <label for="">Nota 2</label>
+        <input type="number" id="inpNota2">
+        <br>
+        <label for="">Nota 3</label>
+        <input type="number" id="inpNota3">
+    
+        <input type="button" value="Registrar" id="btnRegistrar">
+    
+        <div class="">
+            <h3>Listado de alumnos cargados en el sistema</h3>
+            <input type="button" value="Obtener todos los alumnos cargados" onclick="cargarDatos()" id="btnObtener">
+            <ul class="lista">
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
