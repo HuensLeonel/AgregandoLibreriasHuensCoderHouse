@@ -23,6 +23,7 @@ if (consulta) {
 window.addEventListener("load", () => {
 	let divLogin = document.getElementById("login");
 	let divSist = document.getElementById("sistema");
+	document.querySelector("#btnObtenerAyuda").style.display = "block";
 	let sesion = sessionStorage.getItem("sesion");
 	if (sesion == "1") {
 		divLogin.classList.remove("mostrar");
@@ -80,10 +81,10 @@ document.getElementById("btnRegistrar").addEventListener("click", () => {
 
 		arrayAlumnos.push(alumno);
 		//console.log(arrayAlumnos);
-
 		let json = JSON.stringify(arrayAlumnos);
-		//console.log(json);
 
+		//console.log(json);
+		
 		//localStorage.removeItem("Alumnos");
 		localStorage.setItem("Alumnos", json);
 
@@ -99,3 +100,18 @@ document.getElementById("btnRegistrar").addEventListener("click", () => {
 
 	}
 });
+
+document.querySelector('#btnObtenerAyuda').addEventListener('click',()=>{
+	fetch("/UsoSoftware.txt")
+		.then((res)=>{
+			return res.text();
+		})
+		.then((obj)=>{
+			//console.log(typeof obj) strign
+			document.querySelector(".listaAyuda").innerHTML += `${obj.toString()}`;
+			document.querySelector("#btnObtenerAyuda").style.display = "none";
+		})
+		.catch((err)=>{
+			console.error('Error al obtener manual de uso');
+		})
+})
