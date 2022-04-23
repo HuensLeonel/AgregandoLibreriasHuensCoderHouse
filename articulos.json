@@ -1,0 +1,16 @@
+[
+    {
+        "Articulo":"Remera",
+        "Precio" : 2800
+    },
+    
+    {
+        "Articulo":"Pantalon",
+        "Precio" : 4000
+    },
+
+    {
+        "Articulo":"Campera",
+        "Precio" : 3600
+    }
+]

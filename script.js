@@ -21,6 +21,17 @@ if (consulta) {
 }
 
 window.addEventListener("load", () => {
+	fetch("/articulos.json")
+	.then((res)=>{
+		return res.json();
+	})
+	.then((obj)=>{
+		console.log(obj)
+		cargarProductosVentra(obj)
+	})
+	.catch((err)=>{
+		console.error('Error al obtener los objetos');
+	})
 	let divLogin = document.getElementById("login");
 	let divSist = document.getElementById("sistema");
 	document.querySelector("#btnObtenerAyuda").style.display = "block";
@@ -115,3 +126,12 @@ document.querySelector('#btnObtenerAyuda').addEventListener('click',()=>{
 			console.error('Error al obtener manual de uso');
 		})
 })
+
+
+function cargarProductosVentra(obj){
+	let myList = document.querySelector(".listaColegio")
+	myList.innerHTML = "";
+	for (let i = 0; i < obj.length; i++) {
+		myList.innerHTML += `<li>${obj[i].Articulo} - $${obj[i].Precio}<li>`;
+	}
+}
